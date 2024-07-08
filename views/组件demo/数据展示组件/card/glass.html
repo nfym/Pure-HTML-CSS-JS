@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lightly-HTML-Project</title>
+  <style>
+    .card {
+      backdrop-filter: blur(25px);
+      background: linear-gradient(82.92deg, #f9fbff, #f3f8ff 99.2%);
+      border: .0625rem solid #dcecff;
+      border-radius: .5rem;
+      height: 17.1875rem;
+      margin: 200px;
+      max-width: 71rem;
+      padding: 0 1.875rem;
+      position: relative;
+
+    }
+
+    .card::before {
+      background: url(./1.png) top no-repeat;
+      background-size: cover;
+      border-radius: 190px;
+      content: "";
+      height: 380px;
+      left: -160px;
+      position: absolute;
+      top: 50px;
+      width: 380px;
+    }
+
+    .card::after {
+      background: url(./2.png) top no-repeat;
+      background-size: cover;
+      border-radius: 190px;
+      content: "";
+      height: 380px;
+      position: absolute;
+      right: -160px;
+      top: -150px;
+      width: 380px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">111</div>
+</body>
+
+</html>

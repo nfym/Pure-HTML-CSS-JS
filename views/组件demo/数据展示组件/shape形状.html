@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Lightly-HTML-Project</title>
+      <style>
+        .wpdev-shape {
+          width: 100%;
+          height: 350px;
+          position: relative;
+          display: block;
+          transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          padding: 80px 0px 70px 0px;
+        }
+
+        .wpdev-shape:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -10%;
+          height: 100%;
+          width: 99%;
+          background: #0A0C40;
+          border-radius: 0 50px 50px 0;
+          transform: skew(10deg);
+          z-index: -1;
+        }
+
+        .wpdev-shape.bg-grey:before {
+          background: #f8faff;
+        }
+
+        .wpdev-shape.right:before {
+          right: -10%;
+          left: auto;
+          border-radius: 50px 0 0 50px;
+          transform: skew(-10deg);
+        }
+      </style>
+  </head>
+  <body>
+      <scetion class="wpdev-shape">
+        <div style="color: #fff;"> 
+          https://wpdeveloper.com/
+          transform: skew(10deg); + border-radius
+        </div>
+      </scetion>
+
+      <scetion class="wpdev-shape right bg-grey" style="margin-top: 30px;">
+        <div> 
+          https://wpdeveloper.com/
+          transform: skew(-10deg); + border-radius
+        </div>
+      </scetion>
+  </body>
+</html>

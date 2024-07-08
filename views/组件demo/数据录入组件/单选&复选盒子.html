@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<style>
+		.box {
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			width: 600px;
+		}
+
+		.box>li {
+			padding: 10px 10px 0 10px;
+			overflow: hidden;
+			border-bottom: #e5e5e5 solid 1px;
+		}
+
+		.box>li:last-child {
+			border-bottom: none;
+		}
+
+		.box>li>div {
+			float: left;
+		}
+
+		.box>li>div:nth-child(1) {
+			width: 100px;
+		}
+
+		.box>li>div:nth-child(2) {
+			width: 480px;
+			overflow: hidden;
+		}
+
+		.label_box>label {
+			display: block;
+			float: left;
+			margin: 0 10px 10px 0;
+			position: relative;
+			/* 设置溢出隐藏，然后将 label 下的 input 通过定位设置到元素外 */
+			overflow: hidden;
+		}
+
+		.label_box>label>input {
+			position: absolute;
+			top: 0;
+			left: -20px;
+		}
+
+		.label_box>label>div {
+			width: 100px;
+			text-align: center;
+			border: #dddddd solid 1px;
+			height: 40px;
+			line-height: 40px;
+			color: #666666;
+			user-select: none;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.label_box>label>input:checked+div {
+			border: #1890ff solid 1px;
+			color: #1890ff;
+		}
+
+		.label_box>label>input:checked+div:after {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-color: #1890ff;
+			transform: skewY(-45deg);
+			position: absolute;
+			bottom: -10px;
+			right: 0;
+			z-index: 1;
+		}
+
+		.label_box>label>input:checked+div:before {
+			content: '';
+			display: block;
+			width: 3px;
+			height: 8px;
+			border-right: #ffffff solid 2px;
+			border-bottom: #ffffff solid 2px;
+			transform: rotate(35deg);
+			position: absolute;
+			bottom: 2px;
+			right: 4px;
+			z-index: 2;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="text-align: center;">纯CSS美化单选/复选框</h1>
+
+	<ul class="box">
+		<li>
+			<div>单选框：</div>
+			<div class="label_box">
+				<label>
+                    <input type="radio" name="sex">
+                    <div>男</div>
+                </label>
+				<label>
+                    <input type="radio" name="sex">
+                    <div>女</div>
+                </label>
+			</div>
+		</li>
+
+		<li>
+			<div>复选框：</div>
+			<div class="label_box">
+				<label>
+                    <input type="checkbox" name="hobby">
+                    <div>旅游</div>
+                </label>
+				<label>
+                    <input type="checkbox" name="hobby">
+                    <div>爬山</div>
+                </label>
+				<label>
+                    <input type="checkbox" name="hobby">
+                    <div>游泳</div>
+                </label>
+			</div>
+		</li>
+	</ul>
+</body>
+
+</html>

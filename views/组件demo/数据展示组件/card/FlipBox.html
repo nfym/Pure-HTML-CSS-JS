@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Lightly-HTML-Project</title>
+      <style>
+        .flip-card {
+          perspective: 150rem;
+          position: relative;
+          height: 350px;
+          max-width: 400px;
+          margin: 2rem;
+          box-shadow: none;
+          background: none;
+          transform-style: preserve-3d;
+        }
+
+        .flip-card-side {
+          height: 100%;
+          border-radius: 15px;
+          transition: all 0.6s ease;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          padding: 2rem;
+          color: white;
+          background-color: #FFA955;
+        }
+
+        .flip-card:hover .flip-card-side.front {
+          transform: rotateX(180deg);
+        }
+
+        .flip-card-side.back {
+          transform: rotateX(-180deg);
+        }
+
+        .flip-card:hover .flip-card-side.back {
+          transform: rotateX(0deg);
+        }
+        /* ------------------------------- */
+        .eael-elements-flip-box-flip-card {
+          height: 350px;
+          max-width: 400px;
+          transform-style: preserve-3d;
+          transition: all 500ms ease;
+        }
+
+       .eael-elements-flip-box-front-container {
+          background-color: transparent;
+          background-image: linear-gradient(360deg, #0CB496 0%, #7CF1E0 100%);
+          height: 100%;
+          border-radius: 15px;
+          transition: all 0.6s ease;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          padding: 2rem;
+          color: white;
+          background-color: #FFA955;
+        }
+
+      </style>
+  </head>
+  <body>
+      https://essential-addons.com/elementor/flip-box/#
+
+      <div class="flip-card">
+        <div class="flip-card-side front">
+          <div>Front Side</div>
+        </div>
+        <div class="flip-card-side back">
+          <div>Back Side</div>
+        </div>
+      </div>
+
+      <div style="margin: 100px;">divider</div>
+
+      <div class="eael-elements-flip-box-flip-card">
+        <div class="eael-elements-flip-box-front-container">front</div>
+
+      </div>
+  </body>
+</html>

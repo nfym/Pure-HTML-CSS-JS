@@ -1,0 +1,102 @@
+<html>
+
+<head>
+	<style>
+		*,body {
+			margin: 0 auto;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		section {
+			padding: 24px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+
+			[class*="card-"] {
+				width: 33%;
+			}
+
+		}
+
+		section:nth-child(odd) {
+			background: #f4f6f9;
+		}
+
+
+
+		
+
+		.card-3 {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 0 24px;
+			height: 130px;
+			background: linear-gradient(0deg, #fff 0%, #f3f5f8ff 100%);
+			border-radius: 6px;
+			border: 1px solid #fff9;
+			box-shadow: 8px 8px 20px 0 #3763aa1a;
+			transition: all 0.3s;
+			cursor: pointer;
+
+			.logo {
+				width: 50px;
+				margin-right: 16px;
+			}
+
+			.title {
+				color: #000;
+				font-weight: 600;
+				margin-bottom: 8px;
+				font-size: 18px;
+			}
+
+			.desc {
+				color: #666;
+				font-size: 16px;
+			}
+
+		}
+
+		.card-3:hover {
+			background: #fff;
+			transform: scale(1.03);
+
+			.title,
+			.desc {
+				color: #1677ff;
+			}
+		}
+
+		
+	</style>
+</head>
+
+<body>
+
+	<section>
+		<div class="card-3">
+			<div class="logo">
+				<img src="https://image-75140.gzc.vod.tencent-cloud.com/475bb982-9d03-385d-8e18-e123844b88aa" alt="腾讯问卷" style="widht:48px;height: 48px;">
+			</div>
+
+			<div class="toolContent_XatxE">
+				<h3 class="title">腾讯问卷</h3>
+				<p class="desc">免费的问卷调查系统</p>
+			</div>
+		</div>
+		<div class="card-3">
+			<p>card3</p>
+		</div>
+		<div class="card-3">
+			<p>card3</p>
+		</div>
+	</section>
+
+	
+</body>
+
+</html>

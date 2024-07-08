@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wave 波浪 from 图灵机器人官网</title>
+
+    <style>
+        #scene {
+            width: 100%;
+            height: 460px;
+            background: -webkit-gradient(linear, left top, right top, from(#00a3f0), color-stop(#3cccfb), to(#55deff));
+            background: linear-gradient(90deg, #00a3f0, #3cccfb, #55deff);
+            position: relative;
+        }
+        
+        .water {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 164px;
+            background: url("water.png") repeat-x 5% 0;
+            animation: waterMove 16s linear infinite;
+        }
+        
+        @-webkit-keyframes waterMove {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 600% 0%;
+            }
+        }
+        
+        @keyframes waterMove {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 600% 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scene">
+        <div class="water">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>头像背景 from 图灵机器人官网</title>
+    <style>
+        body {
+            background-color: #aaa;
+        }
+        
+        .avatar-box {
+            /* background: linear-gradient(135deg, #2598d6, #5557ff); */
+            width: 423px;
+            height: 419px;
+            position: relative;
+        }
+        
+        .avatar-box i {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+        }
+        
+        .oval1 {
+            background: url("oval1.png") 50% no-repeat;
+            animation: shunScroll 15s infinite;
+        }
+        
+        .oval2 {
+            background: url("oval2.png") 50% no-repeat;
+            animation: niScroll 15s infinite;
+        }
+        
+        .oval3 {
+            background: url("oval3.png") 50% no-repeat;
+            animation: niScroll 15s infinite;
+        }
+        
+        .oval4 {
+            background: url("oval4.png") 50% no-repeat;
+            animation: shunScroll 15s infinite;
+        }
+        
+        @-webkit-keyframes shunScroll {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+        }
+        
+        @keyframes shunScroll {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+        }
+        
+        @-webkit-keyframes niScroll {
+            0% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            50% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+        
+        @keyframes niScroll {
+            0% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            50% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+        
+        .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5557ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="avatar-box">
+        <i class="oval1"></i>
+        <i class="oval2"></i>
+        <i class="oval3"></i>
+        <i class="oval4"></i>
+        <section class="title">Hu</section>
+    </div>
+</body>
+
+</html>
