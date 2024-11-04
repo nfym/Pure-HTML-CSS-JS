@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<style>
+		*,
+		*:after,
+		*:before {
+			box-sizing: border-box;
+		}
+
+		body {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.panel {
+			margin: auto;
+			width: 360px;
+			background: #fff;
+			padding: 24px;
+			border-radius: 8px;
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+			position: relative;
+		}
+
+		.form-item {
+			position: relative;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.form-item+.form-item {
+			margin-top: 24px;
+		}
+
+		.form-item .form-item-label {
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 5px;
+			-webkit-transition: 0.3s;
+			transition: 0.3s;
+		}
+
+		.form-item .form-item-control {
+			width: 100%;
+			position: relative;
+			z-index: 3;
+			height: 35px;
+			background: none;
+			border: none;
+			padding: 5px 0;
+			transition: 0.3s;
+			border-bottom: 1px solid #d9d9d9;
+		}
+
+		.form-item .form-item-control:invalid {
+			outline: none;
+		}
+
+		.form-item .form-item-control:focus,
+		.form-item .form-item-control:valid {
+			outline: none;
+			box-shadow: 0 1px #1677ff;
+			border-color: #1677ff;
+		}
+
+		.form-item .form-item-control:focus+.form-item-label,
+		.form-item .form-item-control:valid+.form-item-label {
+			font-size: 12px;
+			transform: translateY(-12px);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="panel">
+		<div class="form-item">
+			<input required="required" class="form-item-control">
+			<label class="form-item-label">输入手机号</label>
+		</div>
+		<div class="form-item">
+			<input required="required" class="form-item-control">
+			<label class="form-item-label">输入验证码</label>
+		</div>
+		<div class="form-item">
+			<input type="password" required="required" class="form-item-control">
+			<label class="form-item-label">输入新消费密码</label>
+		</div>
+		<div class="form-item">
+			<input type="password" required="required" class="form-item-control">
+			<label class="form-item-label">确认新密码</label>
+		</div>
+	</div>
+</body>
+
+</html>
