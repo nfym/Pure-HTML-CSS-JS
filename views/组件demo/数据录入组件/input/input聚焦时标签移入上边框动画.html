@@ -4,71 +4,102 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <style>
-        body {
-            background-color: #FAFAFA;
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
         }
 
-        input[type="text"] {
-            box-sizing: border-box;
+        body {
+            background-color: #fafafa;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .panel {
+            width: 360px;
+        }
+
+        .form-item {
+            position: relative;
             width: 100%;
-            height: calc(3em + 2px);
-            margin: 0 0 1em;
-            padding: 1em;
-            border: 1px solid #cccccc;
-            border-radius: 1.5em;
-            background: #fff;
+            height: 40px;
+        }
+
+        .form-item+.form-item {
+            margin-top: 24px;
+        }
+
+        .form-item-control {
+            width: 100%;
+            height: 100%;
+            padding: 16px;
+            border: 1px solid #d9d9d9;
+            border-radius: 100px;
             resize: none;
             outline: none;
         }
 
-        input[type="text"][required]:focus {
+        .form-item-control:focus {
             border-color: #00bafa;
         }
 
-        input[type="text"][required]:focus+label[placeholder]:before {
-            color: #00bafa;
+        .form-item-control+.form-item-label {
+            display: block;
+            /* 设置 label 不支持鼠标事件，这样事件就会穿透到下层的 input */
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            font-size: 16px;
+            line-height: 1;
+            transform: translateY(-50%);
+            transition: all 0.2s ease-in-out;
         }
 
-        input[type="text"][required]:focus+label[placeholder]:before,
-        input[type="text"][required]:valid+label[placeholder]:before {
-            transition-duration: .2s;
-            transform: translate(0, -1.5em) scale(0.9, 0.9);
+        /* input 聚焦/已填写内容时，将 label 移入上边框 */
+        .form-item-control:focus+.form-item-label,
+        .form-item-control:valid+.form-item-label {
+            top: 0;
+            left: calc(1rem + 2px);
+            font-size: 12px;
+            transform: translateY(-50%);
         }
 
-        input[type="text"][required]:invalid+label[placeholder][alt]:before {
+        .form-item-control+.form-item-label::before {
+            content: attr(placeholder);
+            display: inline-block;
+            white-space: nowrap;
+            background-color: #fff;
+            color: #898989;
+        }
+
+        /* input 未聚焦时 , 使用 alt 作为 label */
+        .form-item-control:invalid+.form-item-label::before {
             content: attr(alt);
         }
 
-        input[type="text"][required]+label[placeholder] {
-            display: block;
-            pointer-events: none;
-            line-height: 2.3em;
-            margin-top: calc(-3em - 2px);
-            margin-bottom: calc((3em - 1em) + 2px);
-        }
-
-        input[type="text"][required]+label[placeholder]:before {
-            content: attr(placeholder);
-            display: inline-block;
-            margin: 0 calc(1em + 2px);
-            padding: 0 2px;
-            color: #898989;
-            white-space: nowrap;
-            transition: 0.3s ease-in-out;
-            background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-            background-size: 100% 5px;
-            background-repeat: no-repeat;
-            background-position: center;
+        .form-item-control:focus+.form-item-label::before {
+            color: #00bafa;
         }
     </style>
 </head>
 
 <body>
-    <div style="width:400px;height:100px;margin:300px auto">
-        <form>
-            <input required='' type='text'>
-            <label alt='请输入名称' placeholder='名称'></label>
-        </form>
+    <div class="panel">
+        <div class="form-item">
+            <input class="form-item-control" required='' type='text'>
+            <label class="form-item-label" alt='请输入名称' placeholder='名称'></label>
+        </div>
+
+        <div class="form-item" style="height:36px;">
+            <input class="form-item-control" required='' type='text'>
+            <label class="form-item-label" alt='请输入名称' placeholder='名称'></label>
+        </div>
     </div>
 </body>
 
