@@ -1,0 +1,132 @@
+<!--
+ * @Description: 
+ * @Date: 2024-11-21 17:58:26
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>弹性标签动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .wrapper {
+            width: 500px;
+        }
+
+        .ui-segment {
+            border-radius: 6px;
+            height: 32px;
+            line-height: 28px;
+            display: flex;
+            background-color: #f5f5f5;
+            border: 2px solid #f5f5f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ui-segment .ui-segment-item-label {
+            flex: 1;
+            z-index: 1;
+            cursor: pointer;
+            border-radius: 6px;
+            color: #595959;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .ui-segment .ui-segment-item-input {
+            display: none;
+        }
+
+        .ui-segment input:checked+.ui-segment-item-label {
+            color: #1f1f1f;
+            /* 这里字体颜色改变也加个动画过渡 */
+            transition: color 0.6s;
+        }
+
+        .ui-segment .active-tab {
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            left: 0;
+            bottom: 0;
+            background: #fff;
+            border-radius: 4px;
+            /* 添加动画过渡 贝塞尔曲线 */
+            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            /* ant design */
+            /* transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03),
+                0 1px 6px -1px rgba(0, 0, 0, 0.02),
+                0 2px 4px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        .ui-segment #second:checked~.active-tab {
+            left: 20%;
+        }
+
+        .ui-segment #envelope:checked~.active-tab {
+            left: 40%;
+        }
+
+        .ui-segment #heart:checked~.active-tab {
+            left: 60%;
+        }
+
+        .ui-segment #user:checked~.active-tab {
+            left: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="ui-segment">
+            <input type="radio" name="segment" class="ui-segment-item-input" id="first" checked>
+            <label class="ui-segment-item-label" for="first">
+                关注
+            </label>
+
+            <input type="radio" name="segment" class="ui-segment-item-input" id="second">
+            <label class="ui-segment-item-label" for="second">
+                精选
+            </label>
+
+            <input type="radio" name="segment" class="ui-segment-item-input" id="envelope">
+            <label for="envelope" class="ui-segment-item-label">
+                收藏
+            </label>
+
+            <input type="radio" name="segment" class="ui-segment-item-input" id="heart">
+            <label for="heart" class="ui-segment-item-label">
+                Heart
+            </label>
+
+            <input type="radio" name="segment" class="ui-segment-item-input" id="user">
+            <label for="user" class="ui-segment-item-label">
+                User
+            </label>
+
+            <div class="active-tab"></div>
+        </div>
+    </div>
+</body>
+
+</html>
