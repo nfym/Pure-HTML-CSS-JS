@@ -1,0 +1,48 @@
+<!--
+ * @Description: 
+ * @Date: 2025-05-16 11:15:50
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      box-sizing: border-box;
+      height: 100%;
+      background: linear-gradient(#8a38c1 0%, #f74889 50%, #ffb853 100%);
+      border: 1em #fff solid;
+      overflow: hidden;
+    }
+
+    #a {
+      position: absolute;
+      left: 0;
+      bottom: -2em;
+      width: 100%;
+      padding-top: 500em;
+      font: 2em/1em "Lucida Sans Unicode", sans serif;
+      text-align: center;
+      word-break: break-all;
+      color: #fff;
+      background-color: #112;
+      mix-blend-mode: darken;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="a">
+  </div>
+
+  <script>
+    setInterval`a.innerText+=Math.random()>.5?'╱':'╲'`;
+  </script>
+
+</body>
+
+</html>
