@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini 折线面积图</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+</head>
+
+<body>
+  <div>echarts mini 折线面积图 实例</div>
+  <div id="mini-chart" style="width: 180px; height: 70px;"></div>
+  <script>
+    var chart = echarts.init(document.getElementById('mini-chart'));
+    var option = {
+      grid: {
+        top: 1,
+        left: 1,
+        right: 1,
+        bottom: 1,
+        // containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        show: false,
+        boundaryGap: false,
+        data: [
+          "2024-07",
+          "2024-08",
+          "2024-09",
+          "2024-10",
+          "2024-11",
+          "2024-12",
+          "2025-01",
+          "2025-02",
+          "2025-03",
+          "2025-04",
+          "2025-05",
+          "2025-06"
+        ],
+      },
+      yAxis: {
+        type: 'value',
+        show: false,
+        alignTicks: true,
+      },
+      series: [
+        {
+          name: 'Line 1',
+          type: 'line',
+          smooth: true,
+          showSymbol: false,
+          areaStyle: {
+            opacity: 0.1,
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: '#00508F'
+              },
+              {
+                offset: 1,
+                color: '#fff'
+              }
+            ])
+          },
+          data: [
+            100,
+            150,
+            200,
+            250,
+            300,
+            250,
+            200,
+            150,
+            180,
+            200,
+            300,
+            200
+          ],
+        },
+        {
+          name: 'Line 2',
+          type: 'line',
+          smooth: true,
+          showSymbol: false,
+          areaStyle: {
+            opacity: 0.1,
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: '#00A870'
+              },
+              {
+                offset: 1,
+                color: '#fff'
+              }
+            ])
+          },
+          data: [
+            10,
+            10,
+            10,
+            30,
+            30,
+            50,
+            20,
+            15,
+            18,
+            20,
+            30,
+            20
+          ],
+        }
+      ]
+    };
+    chart.setOption(option);
+  </script>
+</body>
+
+</html>
